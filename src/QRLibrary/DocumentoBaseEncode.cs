@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using ZXing.QrCode;
 using ZXing.Common;
 using ZXing;
+using ZXing.QrCode.Internal;
 
 namespace AUDoCo.QRCode
 {
@@ -19,7 +20,7 @@ namespace AUDoCo.QRCode
       private Bitmap getImagenQR(string Content)
       {
          QRCodeWriter qrWriter = new QRCodeWriter();
-         BitMatrix Matrix = qrWriter.encode(Content, ZXing.BarcodeFormat.QR_CODE, 100, 100);
+         BitMatrix Matrix = qrWriter.encode(Content, ZXing.BarcodeFormat.QR_CODE, 150, 150);
 
          BarcodeWriter bcWriter = new BarcodeWriter();
          return bcWriter.Write(Matrix);
